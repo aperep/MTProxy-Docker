@@ -1,3 +1,4 @@
+
 services:
   mtproto-proxy:
     #image: telegrammessenger/proxy:latest
@@ -5,16 +6,24 @@ services:
       context: .
       args:
         MTPROTO_REPO_URL: ${MTPROTO_REPO_URL}
+        TZ: ${TZ}
     container_name: mtproto-proxy
     volumes:
-      - ./volumes/config:/data
+      - config:/data
     restart: unless-stopped
     ports:
       - ${PORT}:8889/udp
       - ${PORT}:8889/tcp
+    entrypoint: ./mtproto-proxy -u mtproxy -p ${STATS_PORT} -H ${PORT} -S ${SECRET} --aes-pwd proxy-secret proxy-multi.conf -M 1 --http-stats --nat-info ${PRIVATE_IP}:${PUBLIC_IP}
     environment:
       - SECRET
       - WORKERS
       - MTPROTO_REPO_URL
       - IP
       - PORT
+      - STATS_PORT
+      - PRIVATE_IP
+      - PUBLIC_IP
+
+volumes:
+  config:

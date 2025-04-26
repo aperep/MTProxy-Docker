@@ -3,6 +3,8 @@
 
 ---
 
+This is an attempt to create a minimal working configuration using [this gist by rameerez](https://gist.github.com/rameerez/8debfc790e965009ca2949c3b4580b91).
+
 Simple MT-Proto proxy **ONLY FOR x86_64 SYSTEMS**
 
 ## Requirements
@@ -25,10 +27,13 @@ If you want to customize an environment, create a `.env` file replacing the foll
 | ---------------- | -------------------------------------------- |
 | SECRET           | `ec4dd80983dbf12d6b354cf7bcfe9a48`           |
 | WORKERS          | 1                                            |
-| MTPROTO_REPO_URL | https://github.com/TelegramMessenger/MTProxy |
-| TZ               |                                              |
+| MTPROTO_REPO_URL | https://github.com/GetPageSpeed/MTProxy      |
+| TZ               | Europe/Moscow                                |
 | IP               | Public IP address (optional)                 |
 | PORT             | 8443                                         |
+| STATS_PORT       | 8888                                         |
+| PRIVATE_IP       | 127.0.0.1                                    |
+| PUBLIC_IP        |                                              |
 
 An alternative to `MTPROTO_REPO_URL` is https://github.com/GetPageSpeed/MTProxy that is a fork from MTProxy with patches applied.
 
