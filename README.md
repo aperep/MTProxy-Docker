@@ -28,6 +28,7 @@ If you want to customize an environment, create a `.env` file replacing the foll
 | MTPROTO_REPO_URL | https://github.com/TelegramMessenger/MTProxy |
 | TZ               |                                              |
 | IP               | Public IP address (optional)                 |
+| PORT             | 8443                                         |
 
 An alternative to `MTPROTO_REPO_URL` is https://github.com/GetPageSpeed/MTProxy that is a fork from MTProxy with patches applied.
 

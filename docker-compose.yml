@@ -10,10 +10,11 @@ services:
       - ./volumes/config:/data
     restart: unless-stopped
     ports:
-      - 8443:8889/udp
-      - 8443:8889/tcp
+      - ${PORT}:8889/udp
+      - ${PORT}:8889/tcp
     environment:
       - SECRET
       - WORKERS
       - MTPROTO_REPO_URL
       - IP
+      - PORT
